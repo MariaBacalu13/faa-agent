@@ -1,0 +1,25 @@
+{
+  "name": "faa-agent",
+  "version": "1.0.0",
+  "description": "AI agent that guides users through the FAA.ro website (Faculty of Administration and Business, University of Bucharest)",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --env-file=.env src/index.js",
+    "serve": "node --env-file=.env src/server.js",
+    "dev": "concurrently \"node --env-file=.env src/server.js\" \"npm run --prefix frontend dev\"",
+    "build": "npm run --prefix frontend build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "adm-zip": "^0.5.17",
+    "docx": "^9.7.1",
+    "pdfjs-dist": "^4.10.38"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
